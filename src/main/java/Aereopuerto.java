@@ -28,7 +28,7 @@ private Avion avion;
     public void registrarPasajero(Pasajero pasajero) {
         this.pasajero = pasajero;
         System.out.println("Pasajero registrado: " + pasajero.getNombre());
-        
+    }
     //Modificasr estado del pasajero    
         public void modificarEstadoPasajero(String estado) {
         if (pasajero != null) {
@@ -38,7 +38,30 @@ private Avion avion;
             System.out.println("No hay pasajero registrado.");
         }
     }
+    public void asignarPasajeroAVuelo() {
+        if (pasajero != null && vuelo != null) {
+            pasajero.asignarVuelo(vuelo);
+            System.out.println("Pasajero asignado al vuelo correctamente");
+        } else {
+            System.out.println("Debe registrar vuelo y pasajero primero");
+        }
+    }
+    
+public void mostrar() {
+        System.out.println("\n=== DATOS ===");
 
+        if (vuelo != null) {
+            System.out.println(vuelo.mostrar());
+        } else {
+            System.out.println("No hay vuelo");
+        }
+
+        if (pasajero != null) {
+            System.out.println(pasajero.mostrar());
+        } else {
+            System.out.println("No hay pasajero");
+        }
+    }
 //TODO VA CON LISTAS ENLAZADAS
 //los metodos a usar en la clase aereopuerto son los siguientes:
 //registrar vuelo, modificar vuelo

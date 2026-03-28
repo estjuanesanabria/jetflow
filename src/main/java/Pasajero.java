@@ -33,12 +33,11 @@ public class Pasajero {
     //
     //
 
-    String getNombre() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    public String mostrar() {
+        return "Pasajero: " + nombre +
+               " Documento: " + documento +
+               " Nacionalidad: " + nacionalidad +
+               " Vuelo: " + numeroVuelo +
+               " Estado: " + estadoVuelo;
     }
-
-    void cambiarEstado(String estado) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
-    
 }

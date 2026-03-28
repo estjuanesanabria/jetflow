@@ -18,6 +18,13 @@ public class Pasajero {
         this.numeroVuelo = vuelo.getNumeroVuelo();
         this.estadoVuelo = "Asignado";
     }
+     public void cambiarEstadoVuelo(String estado){
+         this.estadoVuelo = estado;
+     }
+     public String getNombre() {
+        return nombre;
+    }
+
     //agregar nombre (get, set nombre)
     //establecer id (get, set id)
     //estado de vuelo del pasajero (get,set estado)

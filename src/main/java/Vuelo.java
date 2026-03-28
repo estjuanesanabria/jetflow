@@ -1,7 +1,3 @@
-
-
-
-
 public class Vuelo {
     private String numeroVuelo;
     private String origen;
@@ -17,11 +13,15 @@ public class Vuelo {
     //asignar avion
     //mostrar informacion
 
-    void setEstado(String estado) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    String getNumeroVuelo() {
+        
+        return null;
+        
     }
 
-    String getNumeroVuelo() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    void setEstado(String estado) {
+       
     }
+
+    
 }

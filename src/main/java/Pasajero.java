@@ -1,7 +1,3 @@
-
-
-
-
 public class Pasajero {
     private String nombre;
     private String documento;
@@ -10,10 +6,17 @@ public class Pasajero {
     private String estadoVuelo;
     private Vuelo vuelo;
     
-    /**
-     * Me
-     */
-    public Pasajero() {
+    
+     public Pasajero(String nombre, String documento, String nacionalidad) {
+        this.nombre = nombre;
+        this.documento = documento;
+        this.nacionalidad = nacionalidad;
+        this.estadoVuelo = "Sin asignar";
+    }
+     public void asignarVuelo(Vuelo vuelo) {
+        this.vuelo = vuelo;
+        this.numeroVuelo = vuelo.getNumeroVuelo();
+        this.estadoVuelo = "Asignado";
     }
     //agregar nombre (get, set nombre)
     //establecer id (get, set id)
@@ -22,5 +25,13 @@ public class Pasajero {
     //mostrar informacion
     //
     //
+
+    String getNombre() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
+    void cambiarEstado(String estado) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
     
 }

@@ -9,64 +9,78 @@ public class Vuelo {
     private String estado;
     private Avion avion;
 
-    // Librerías del profe
     private ListaEnlazada<Pasajero> pasajeros;
     private ColaEnlazada<Pasajero> colaAbordaje;
 
     /**
-     * Constructor
+     * Constructor principal
      */
-    public Vuelo(String numeroVuelo, Avion avion) {
+    public Vuelo(String numeroVuelo, String origen, String destino, Avion avion) {
         this.numeroVuelo = numeroVuelo;
+        this.origen = origen;
+        this.destino = destino;
         this.avion = avion;
-        this.origen = "Bogotá";
-        this.destino = "Medellín";
         this.estado = "Programado";
 
-        pasajeros = new ListaEnlazada<>();
-        colaAbordaje = new ColaEnlazada<>();
+        this.pasajeros = new ListaEnlazada<>() {};
+        this.colaAbordaje = new ColaEnlazada<>();
     }
 
-    // ================= MÉTODOS =================
-
+    // ================= GETTERS =================
     public String getNumeroVuelo() {
         return numeroVuelo;
     }
 
+    public String getOrigen() {
+        return origen;
+    }
+
+    public String getDestino() {
+        return destino;
+    }
+
+    public String getEstado() {
+        return estado;
+    }
+
+    public Avion getAvion() {
+        return avion;
+    }
+
+    // ================= SETTERS =================
     public void setEstado(String estado) {
         this.estado = estado;
     }
 
-    /**
-     * Registra pasajero en la lista del vuelo
-     */
+    // ================= PASAJEROS =================
     public void agregarPasajero(Pasajero p) {
         pasajeros.add(p);
+        System.out.println("Pasajero agregado al vuelo");
     }
 
-    /**
-     * Agrega pasajero a la cola de abordaje
-     */
     public void agregarACola(Pasajero p) {
         colaAbordaje.encolar(p);
+        System.out.println("Pasajero enviado a cola");
     }
 
-    /**
-     * Aborda pasajero
-     */
-    public Pasajero abordar() {
-        return colaAbordaje.desencolar();
+    public void abordarPasajero() {
+        Pasajero p = colaAbordaje.desencolar();
+
+        if (p != null) {
+            System.out.println("Abordando: " + p.getNombre());
+        } else {
+            System.out.println("No hay pasajeros en cola");
+        }
     }
 
-    /**
-     * Muestra datos
-     */
+    // ================= MOSTRAR =================
     public String mostrar() {
-        return "Vuelo: " + numeroVuelo
+        return "=== INFORMACIÓN DEL VUELO ==="
+                + "\nNúmero: " + numeroVuelo
                 + "\nOrigen: " + origen
                 + "\nDestino: " + destino
                 + "\nEstado: " + estado
-                + "\nAvion: " + avion.getModelo()
-                + "\nMatricula: " + avion.getMatricula();
+                + "\nModelo avión: " + avion.getModelo()
+                + "\nMatrícula: " + avion.getMatricula();
     }
 }

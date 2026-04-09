@@ -8,6 +8,7 @@ private String nombre;
 private Vuelo vuelo;
 private Pasajero pasajero;
 private Avion avion;
+private ColaEnlazada<Pasajero> colaAbordaje;
     
           // Registrar vuelo
     public void registrarVuelo(Vuelo vuelo) {
@@ -62,6 +63,7 @@ public void mostrar() {
             System.out.println("No hay pasajero");
         }
     }
+
 //TODO VA CON LISTAS ENLAZADAS
 //los metodos a usar en la clase aereopuerto son los siguientes:
 //registrar vuelo, modificar vuelo

@@ -31,6 +31,10 @@ public class Avion {
     //establecer matricula (get , set matricula)
     //establecer capacidad (get, set capacidad)
     //mostrar informacion
+
+    String getModelo() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
     
 
 }

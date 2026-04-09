@@ -16,7 +16,7 @@ public class Pasajero {
         this.estado = "Registrado";
     }
 
-    // ================= GETTERS =================
+    //  GETTERS 
     public String getNombre() {
         return nombre;
     }
@@ -37,7 +37,7 @@ public class Pasajero {
         return vuelo;
     }
 
-    // ================= SETTERS =================
+    //  SETTERS 
     public void setEstado(String estado) {
         this.estado = estado;
     }
@@ -47,7 +47,7 @@ public class Pasajero {
         this.estado = "Asignado a vuelo";
     }
 
-    // ================= MOSTRAR =================
+    //  MOSTRAR 
     public String mostrar() {
         String infoVuelo = (vuelo != null)
                 ? vuelo.getNumeroVuelo()

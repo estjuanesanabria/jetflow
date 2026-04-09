@@ -22,11 +22,11 @@ public class Vuelo {
         this.avion = avion;
         this.estado = "Programado";
 
-        this.pasajeros = new ListaEnlazada<>() {};
+            this.pasajeros = new ListaEnlazada<>() {};
         this.colaAbordaje = new ColaEnlazada<>();
-    }
+    }   
 
-    // ================= GETTERS =================
+    //  GETTERS 
     public String getNumeroVuelo() {
         return numeroVuelo;
     }
@@ -47,12 +47,12 @@ public class Vuelo {
         return avion;
     }
 
-    // ================= SETTERS =================
+    //  SETTERS 
     public void setEstado(String estado) {
         this.estado = estado;
     }
 
-    // ================= PASAJEROS =================
+    // PASAJEROS 
     public void agregarPasajero(Pasajero p) {
         pasajeros.add(p);
         System.out.println("Pasajero agregado al vuelo");
@@ -73,7 +73,7 @@ public class Vuelo {
         }
     }
 
-    // ================= MOSTRAR =================
+    //  MOSTRAR 
     public String mostrar() {
         return "=== INFORMACIÓN DEL VUELO ==="
                 + "\nNúmero: " + numeroVuelo

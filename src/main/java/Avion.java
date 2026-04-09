@@ -4,12 +4,16 @@ public class Avion {
     private int capacidad;
     private String matricula;
 
+    /**
+     * Constructor principal
+     */
     public Avion(String modelo, int capacidad, String matricula) {
         this.modelo = modelo;
         this.capacidad = capacidad;
         this.matricula = matricula;
     }
 
+    //  GETTERS 
     public String getModelo() {
         return modelo;
     }
@@ -22,8 +26,23 @@ public class Avion {
         return matricula;
     }
 
+    //  SETTERS 
+    public void setModelo(String modelo) {
+        this.modelo = modelo;
+    }
+
+    public void setCapacidad(int capacidad) {
+        this.capacidad = capacidad;
+    }
+
+    public void setMatricula(String matricula) {
+        this.matricula = matricula;
+    }
+
+    //  MOSTRAR 
     public String mostrar() {
-        return "Modelo: " + modelo
+        return "=== AVIÓN ==="
+                + "\nModelo: " + modelo
                 + "\nCapacidad: " + capacidad
                 + "\nMatrícula: " + matricula;
     }

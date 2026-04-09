@@ -48,6 +48,7 @@ public class Aereopuerto {
                     
 
                     System.out.print("Matrícula del avión: ");
+                    String matricula = null;
                     
 
                     a.avion = new Avion("Boeing 737", 180, matricula);
@@ -57,9 +58,11 @@ public class Aereopuerto {
                     break;
                 }
 
+
                 case '2': {
                     if (a.vuelo != null) {
                         System.out.print("Nuevo estado del vuelo: ");
+                        String estado = null;
                         
                         a.vuelo.setEstado(estado);
                         System.out.println("Estado actualizado");

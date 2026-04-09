@@ -1,40 +1,30 @@
-/**
- * Representa un avión
- */
 public class Avion {
 
     private String modelo;
     private int capacidad;
     private String matricula;
 
-    /**
-     * Constructor
-     */
-    public Avion(String modelo, int capacidad) {
+    public Avion(String modelo, int capacidad, String matricula) {
         this.modelo = modelo;
         this.capacidad = capacidad;
         this.matricula = matricula;
-
     }
- public String getMatricula() {
+
+    public String getModelo() {
+        return modelo;
+    }
+
+    public int getCapacidad() {
+        return capacidad;
+    }
+
+    public String getMatricula() {
         return matricula;
     }
-    /**
-     * Muestra información del avión
-     */
+
     public String mostrar() {
-        return "Modelo: " + modelo +
-               " | Capacidad: " + capacidad +
-               " | Matrícula: " + matricula;
+        return "Modelo: " + modelo
+                + "\nCapacidad: " + capacidad
+                + "\nMatrícula: " + matricula;
     }
-  //establecer modelo(get, set modelo)
-    //establecer matricula (get , set matricula)
-    //establecer capacidad (get, set capacidad)
-    //mostrar informacion
-
-    String getModelo() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
-    
-
 }

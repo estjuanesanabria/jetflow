@@ -1,47 +1,63 @@
 public class Pasajero {
+
     private String nombre;
     private String documento;
     private String nacionalidad;
-    private String numeroVuelo;
-    private String estadoVuelo;
+    private String estado;
     private Vuelo vuelo;
-    
-    
-     public Pasajero(String nombre, String documento, String nacionalidad) {
+
+    /**
+     * Constructor
+     */
+    public Pasajero(String nombre, String documento, String nacionalidad) {
         this.nombre = nombre;
         this.documento = documento;
         this.nacionalidad = nacionalidad;
-        this.estadoVuelo = "Sin asignar";
+        this.estado = "Registrado";
     }
-     public void asignarVuelo(Vuelo vuelo) {
-        this.vuelo = vuelo;
-        this.numeroVuelo = vuelo.getNumeroVuelo();
-        this.estadoVuelo = "Asignado";
-    }
-     public void cambiarEstadoVuelo(String estado){
-         this.estadoVuelo = estado;
-     }
-     public String getNombre() {
+
+    // ================= GETTERS =================
+    public String getNombre() {
         return nombre;
     }
 
-    //agregar nombre (get, set nombre)
-    //establecer id (get, set id)
-    //estado de vuelo del pasajero (get,set estado)
-    //asignar vuelo
-    //mostrar informacion
-    //
-    //
-
-    public String mostrar() {
-        return "Pasajero: " + nombre +
-               " Documento: " + documento +
-               " Nacionalidad: " + nacionalidad +
-               " Vuelo: " + numeroVuelo +
-               " Estado: " + estadoVuelo;
+    public String getDocumento() {
+        return documento;
     }
 
-    void cambiarEstado(String estado) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    public String getNacionalidad() {
+        return nacionalidad;
+    }
+
+    public String getEstado() {
+        return estado;
+    }
+
+    public Vuelo getVuelo() {
+        return vuelo;
+    }
+
+    // ================= SETTERS =================
+    public void setEstado(String estado) {
+        this.estado = estado;
+    }
+
+    public void asignarVuelo(Vuelo vuelo) {
+        this.vuelo = vuelo;
+        this.estado = "Asignado a vuelo";
+    }
+
+    // ================= MOSTRAR =================
+    public String mostrar() {
+        String infoVuelo = (vuelo != null)
+                ? vuelo.getNumeroVuelo()
+                : "Sin vuelo";
+
+        return "=== PASAJERO ==="
+                + "\nNombre: " + nombre
+                + "\nDocumento: " + documento
+                + "\nNacionalidad: " + nacionalidad
+                + "\nEstado: " + estado
+                + "\nVuelo: " + infoVuelo;
     }
 }

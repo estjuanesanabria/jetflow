@@ -1,12 +1,12 @@
 
 import com.murcia.utils.Input;
-
+import com.murcia.utils.ColaEnlazada;   
 //Juan Esteban Sanabria - 6014495, Katherine Ortega Contreras - 6014550
 public class Aereopuerto {
 
 private String nombre;
 private Vuelo vuelo;
-private Pasajero pasajero;
+private Pasajero     pasajero;
 private Avion avion;
 private ColaEnlazada<Pasajero> colaAbordaje;
     

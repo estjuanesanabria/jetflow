@@ -59,7 +59,7 @@ public class Aereopuerto {
                 }
 
 
-                case '2': {
+                 case '2': {
                     if (a.vuelo != null) {
                         System.out.print("Nuevo estado del vuelo: ");
                         String estado = null;
@@ -73,19 +73,15 @@ public class Aereopuerto {
                 }
 
                 case '3': {
-                    System.out.print("Nombre: ");
-                    
+    String nombre = Input.next("Nombre: ");
+    String documento = Input.next("Documento: ");
+    String nacionalidad = Input.next("Nacionalidad: ");
 
-                    System.out.print("Documento: ");
-                    
+    a.pasajero = new Pasajero(nombre, documento, nacionalidad);
 
-                    System.out.print("Nacionalidad: ");
-                    
-                    a.pasajero = new Pasajero(nombre, documento, nacionalidad);
-
-                    System.out.println("Pasajero registrado");
-                    break;
-                }
+    System.out.println("Pasajero registrado");
+    break;
+}
 
                 case '4': {
                     if (a.vuelo != null && a.pasajero != null) {

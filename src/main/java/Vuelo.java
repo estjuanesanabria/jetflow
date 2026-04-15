@@ -12,47 +12,33 @@ public class Vuelo {
     private ListaEnlazada<Pasajero> pasajeros;
     private ColaEnlazada<Pasajero> colaAbordaje;
 
-    /**
-     * Constructor principal
-     */
-    public Vuelo(String numeroVuelo, String origen, String destino, Avion avion) {
+    // ================= CONSTRUCTOR BASE =================
+    public Vuelo(String numeroVuelo, Avion avion) {
         this.numeroVuelo = numeroVuelo;
-        this.origen = origen;
-        this.destino = destino;
         this.avion = avion;
         this.estado = "Programado";
 
-            this.pasajeros = new ListaEnlazada<>() {};
-        this.colaAbordaje = new ColaEnlazada<>();
-    }   
+        pasajeros = new ListaEnlazada<>() {};
+        colaAbordaje = new ColaEnlazada<>();
+    }
 
-    //  GETTERS 
+    // ================= SOBRECARGA =================
+    public Vuelo(String numeroVuelo, String origen, String destino, Avion avion) {
+        this(numeroVuelo, avion);
+        this.origen = origen;
+        this.destino = destino;
+    }
+
+    // ================= GETTERS =================
     public String getNumeroVuelo() {
         return numeroVuelo;
     }
 
-    public String getOrigen() {
-        return origen;
-    }
-
-    public String getDestino() {
-        return destino;
-    }
-
-    public String getEstado() {
-        return estado;
-    }
-
-    public Avion getAvion() {
-        return avion;
-    }
-
-    //  SETTERS 
     public void setEstado(String estado) {
         this.estado = estado;
     }
 
-    // PASAJEROS 
+    // ================= PASAJEROS =================
     public void agregarPasajero(Pasajero p) {
         pasajeros.add(p);
         System.out.println("Pasajero agregado al vuelo");
@@ -60,7 +46,7 @@ public class Vuelo {
 
     public void agregarACola(Pasajero p) {
         colaAbordaje.encolar(p);
-        System.out.println("Pasajero enviado a cola");
+        System.out.println("Pasajero agregado a cola");
     }
 
     public void abordarPasajero() {
@@ -73,18 +59,39 @@ public class Vuelo {
         }
     }
 
-    //  MOSTRAR 
+    // ================= MOSTRAR COLA =================
+    public void mostrarCola() {
+        ColaEnlazada<Pasajero> auxiliar = new ColaEnlazada<>();
+        Pasajero p = colaAbordaje.desencolar();
+
+        if (p == null) {
+            System.out.println("No hay pasajeros en cola");
+            return;
+        }
+
+        while (p != null) {
+            System.out.println(p.getNombre());
+            auxiliar.encolar(p);
+            p = colaAbordaje.desencolar();
+        }
+
+        p = auxiliar.desencolar();
+
+        while (p != null) {
+            colaAbordaje.encolar(p);
+            p = auxiliar.desencolar();
+        }
+    }
+
+    // ================= MOSTRAR INFO =================
     public String mostrar() {
-        return "=== INFORMACIÓN DEL VUELO ==="
-                + "\nNúmero: " + numeroVuelo
+        return """
+               === INFORMACI\u00d3N DEL VUELO ===
+               N\u00famero: """ + numeroVuelo
                 + "\nOrigen: " + origen
                 + "\nDestino: " + destino
                 + "\nEstado: " + estado
-                + "\nModelo avión: " + avion.getModelo()
+                + "\nAvión: " + avion.getModelo()
                 + "\nMatrícula: " + avion.getMatricula();
-    }
-
-    void mostrarCola() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 }

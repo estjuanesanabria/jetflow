@@ -29,7 +29,6 @@ public class Aereopuerto {
         };
 
         Menu menu = new Menu(opciones, 'N', "-", "SISTEMA AEROPUERTO");
-
         char op;
 
         do {
@@ -38,34 +37,22 @@ public class Aereopuerto {
             switch (op) {
 
                 case '1': {
-                    System.out.print("Código del vuelo: ");
-                    
-
-                    System.out.print("Origen: ");
-                    
-
-                    System.out.print("Destino: ");
-                    
-
-                    System.out.print("Matrícula del avión: ");
-                    String matricula = null;
-                    
+                    String numeroVuelo = Input.next("Código del vuelo: ");
+                    String origen = Input.next("Origen: ");
+                    String destino = Input.next("Destino: ");
+                    String matricula = Input.next("Matrícula del avión: ");
 
                     a.avion = new Avion("Boeing 737", 180, matricula);
-                    a.vuelo = new Vuelo(codigo, origen, destino, a.avion);
+                    a.vuelo = new Vuelo(numeroVuelo, origen, destino, a.avion);
 
-                    System.out.println("Vuelo registrado correctamente");
+                    System.out.println("Vuelo registrado");
                     break;
                 }
 
-
-                 case '2': {
+                case '2': {
                     if (a.vuelo != null) {
-                        System.out.print("Nuevo estado del vuelo: ");
-                        String estado = null;
-                        
+                        String estado = Input.next("Nuevo estado: ");
                         a.vuelo.setEstado(estado);
-                        System.out.println("Estado actualizado");
                     } else {
                         System.out.println("No hay vuelo registrado");
                     }
@@ -73,18 +60,18 @@ public class Aereopuerto {
                 }
 
                 case '3': {
-    String nombre = Input.next("Nombre: ");
-    String documento = Input.next("Documento: ");
-    String nacionalidad = Input.next("Nacionalidad: ");
+                    String nombre = Input.next("Nombre: ");
+                    String documento = Input.next("Documento: ");
+                    String nacionalidad = Input.next("Nacionalidad: ");
 
-    a.pasajero = new Pasajero(nombre, documento, nacionalidad);
-
-    System.out.println("Pasajero registrado");
-    break;
-}
+                    a.pasajero = new Pasajero(nombre, documento, nacionalidad);
+                    System.out.println("Pasajero registrado");
+                    break;
+                }
 
                 case '4': {
                     if (a.vuelo != null && a.pasajero != null) {
+                        a.pasajero.asignarVuelo(a.vuelo);
                         a.vuelo.agregarPasajero(a.pasajero);
                     } else {
                         System.out.println("Debe registrar vuelo y pasajero");
@@ -105,7 +92,7 @@ public class Aereopuerto {
                     if (a.vuelo != null) {
                         a.vuelo.mostrarCola();
                     } else {
-                        System.out.println("No hay vuelo registrado");
+                        System.out.println("No hay vuelo");
                     }
                     break;
                 }
@@ -114,7 +101,7 @@ public class Aereopuerto {
                     if (a.vuelo != null) {
                         a.vuelo.abordarPasajero();
                     } else {
-                        System.out.println("No hay vuelo registrado");
+                        System.out.println("No hay vuelo");
                     }
                     break;
                 }
@@ -123,18 +110,9 @@ public class Aereopuerto {
                     if (a.vuelo != null) {
                         System.out.println(a.vuelo.mostrar());
                     } else {
-                        System.out.println("No hay vuelo registrado");
+                        System.out.println("No hay vuelo");
                     }
                     break;
-                }
-
-                case '9': {
-                    System.out.println("Saliendo del sistema...");
-                    break;
-                }
-
-                default: {
-                    System.out.println("Opción inválida");
                 }
             }
 

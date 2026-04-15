@@ -23,8 +23,8 @@ public class Aereopuerto {
             "9. Salir"
         };
 
-        // 🔥 CLAVE: usar 'V' para menu vertical real
-        Menu menu = new Menu(opciones, 'V', "", "SISTEMA AEROPUERTO");
+        //  CLAVE: usar 'V' para menu vertical real
+        Menu menu = new Menu(opciones, 'V', "", "\nSISTEMA AEROPUERTO");
 
         char op;
 
@@ -145,7 +145,7 @@ public class Aereopuerto {
             }
 
             if (op != '9') {
-                Input.next("Presione ENTER para continuar");
+                Input.nextLine("Presione ENTER para continuar");
             }
 
         } while (op != '9');

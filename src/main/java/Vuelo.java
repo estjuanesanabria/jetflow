@@ -95,3 +95,32 @@ public class Vuelo {
                 + "\nMatrícula: " + avion.getMatricula();
     }
 }
+/**
+ * Clase que representa un vuelo dentro del sistema de aeropuerto.
+ * Permite gestionar la informacion del vuelo, incluyendo su numero,
+ * origen, destino, estado y el avion asociado.
+ *
+ * Tambien administra la lista de pasajeros y la cola de abordaje
+ * utilizando estructuras de datos como lista enlazada y cola.
+ *
+ * Atributos:
+ * numeroVuelo: identificador unico del vuelo.
+ * origen: ciudad de salida del vuelo.
+ * destino: ciudad de llegada del vuelo.
+ * estado: estado actual del vuelo (programado, retrasado, etc).
+ * avion: objeto que representa el avion asignado al vuelo.
+ * pasajeros: lista enlazada que almacena los pasajeros del vuelo.
+ * colaAbordaje: cola que gestiona el orden de abordaje de los pasajeros.
+ *
+ * Constructores:
+ * Inicializan el vuelo con sus datos basicos y estructuras necesarias.
+ *
+ * Metodos:
+ * getNumeroVuelo(): retorna el numero del vuelo.
+ * setEstado(): permite cambiar el estado del vuelo.
+ * agregarPasajero(): agrega un pasajero a la lista del vuelo.
+ * agregarACola(): agrega un pasajero a la cola de abordaje.
+ * abordarPasajero(): permite abordar al siguiente pasajero en la cola.
+ * mostrarCola(): muestra los pasajeros en orden de abordaje.
+ * mostrar(): retorna la informacion general del vuelo.
+ */

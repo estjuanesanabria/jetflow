@@ -22,3 +22,22 @@ public class Pasajero {
         this.estado = "Asignado";
     }
 }
+/**
+ * Clase que representa un pasajero dentro del sistema de aeropuerto.
+ * Permite almacenar la informacion personal del pasajero y su relacion
+ * con un vuelo dentro del sistema.
+ *
+ * Atributos:
+ * nombre: nombre completo del pasajero.
+ * documento: identificacion unica del pasajero.
+ * nacionalidad: pais de origen del pasajero.
+ * estado: estado del pasajero dentro del sistema (registrado, asignado, etc).
+ * vuelo: objeto que representa el vuelo asignado al pasajero.
+ *
+ * Constructor:
+ * Inicializa un pasajero con su informacion personal y estado inicial.
+ *
+ * Metodos:
+ * getNombre(): retorna el nombre del pasajero.
+ * asignarVuelo(): asigna un vuelo al pasajero y actualiza su estado.
+ */

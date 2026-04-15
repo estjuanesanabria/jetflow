@@ -86,7 +86,7 @@ public class Vuelo {
     // ================= MOSTRAR INFO =================
     public String mostrar() {
         return """
-               === INFORMACI\u00d3N DEL VUELO ===
+               === INFORMACION DEL VUELO ===
                N\u00famero: """ + numeroVuelo
                 + "\nOrigen: " + origen
                 + "\nDestino: " + destino

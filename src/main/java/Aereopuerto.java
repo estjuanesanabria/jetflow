@@ -160,5 +160,23 @@ public class Aereopuerto {
 //mostrar vuelos, mostrar pasajeros
         
     
-    
+    /**
+ * Clase principal del sistema de gestion de aeropuerto.
+ * 
+ * Permite la interaccion con el usuario a traves de un menu en consola,
+ * donde se pueden realizar operaciones como registrar vuelos, registrar
+ * pasajeros, asignarlos y gestionar el abordaje.
+ * 
+ * Esta clase contiene el metodo main y coordina la ejecucion del sistema.
+ */ /** Objeto que representa el vuelo actual del sistema */
+/** Objeto que representa el pasajero actual */
+/** Objeto que representa el avion asociado al vuelo */
+/**
+ * Metodo principal que inicia la ejecucion del programa.
+ * 
+ * Muestra el menu de opciones y permite al usuario interactuar
+ * con el sistema mediante la seleccion de diferentes funcionalidades.
+ * 
+ * @param args argumentos de linea de comandos
+ */
 

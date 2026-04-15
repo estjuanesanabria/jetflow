@@ -1,46 +1,47 @@
 import com.murcia.utils.Input;
 import com.murcia.utils.Menu;
 
-// Juan Esteban Sanabria - 6014495
-// Katherine Ortega Contreras - 6014550
 public class Aereopuerto {
 
     private Vuelo vuelo;
     private Pasajero pasajero;
     private Avion avion;
 
-    public Aereopuerto() {
-    }
-
     public static void main(String[] args) {
 
         Aereopuerto a = new Aereopuerto();
 
         String[] opciones = {
-            "Registrar vuelo",
-            "Cambiar estado del vuelo",
-            "Registrar pasajero",
-            "Asignar pasajero al vuelo",
-            "Enviar pasajero a cola",
-            "Mostrar cola",
-            "Abordar pasajero",
-            "Mostrar vuelo",
-            "Salir"
+            "1. Registrar vuelo",
+            "2. Cambiar estado del vuelo",
+            "3. Registrar pasajero",
+            "4. Asignar pasajero al vuelo",
+            "5. Enviar pasajero a cola",
+            "6. Mostrar cola de abordaje",
+            "7. Abordar pasajero",
+            "8. Mostrar informacion del vuelo",
+            "9. Salir"
         };
 
-        Menu menu = new Menu(opciones, 'N', "-", "SISTEMA AEROPUERTO");
+        // 🔥 CLAVE: usar 'V' para menu vertical real
+        Menu menu = new Menu(opciones, 'V', "", "SISTEMA AEROPUERTO");
+
         char op;
 
         do {
-            op = menu.select("Seleccione una opción");
+            op = menu.select("Seleccione una opcion");
+
+            System.out.println("\n----------------------------");
 
             switch (op) {
 
                 case '1': {
-                    String numeroVuelo = Input.next("Código del vuelo: ");
+                    System.out.println("REGISTRAR VUELO");
+
+                    String numeroVuelo = Input.next("Codigo del vuelo: ");
                     String origen = Input.next("Origen: ");
                     String destino = Input.next("Destino: ");
-                    String matricula = Input.next("Matrícula del avión: ");
+                    String matricula = Input.next("Matricula del avion: ");
 
                     a.avion = new Avion("Boeing 737", 180, matricula);
                     a.vuelo = new Vuelo(numeroVuelo, origen, destino, a.avion);
@@ -50,45 +51,59 @@ public class Aereopuerto {
                 }
 
                 case '2': {
+                    System.out.println("CAMBIAR ESTADO");
+
                     if (a.vuelo != null) {
                         String estado = Input.next("Nuevo estado: ");
                         a.vuelo.setEstado(estado);
+                        System.out.println("Estado actualizado");
                     } else {
-                        System.out.println("No hay vuelo registrado");
+                        System.out.println("No hay vuelo");
                     }
                     break;
                 }
 
                 case '3': {
+                    System.out.println("REGISTRAR PASAJERO");
+
                     String nombre = Input.next("Nombre: ");
                     String documento = Input.next("Documento: ");
                     String nacionalidad = Input.next("Nacionalidad: ");
 
                     a.pasajero = new Pasajero(nombre, documento, nacionalidad);
+
                     System.out.println("Pasajero registrado");
                     break;
                 }
 
                 case '4': {
+                    System.out.println("ASIGNAR PASAJERO");
+
                     if (a.vuelo != null && a.pasajero != null) {
                         a.pasajero.asignarVuelo(a.vuelo);
                         a.vuelo.agregarPasajero(a.pasajero);
+                        System.out.println("Pasajero asignado");
                     } else {
-                        System.out.println("Debe registrar vuelo y pasajero");
+                        System.out.println("Falta vuelo o pasajero");
                     }
                     break;
                 }
 
                 case '5': {
+                    System.out.println("ENVIAR A COLA");
+
                     if (a.vuelo != null && a.pasajero != null) {
                         a.vuelo.agregarACola(a.pasajero);
+                        System.out.println("Pasajero en cola");
                     } else {
-                        System.out.println("Debe registrar vuelo y pasajero");
+                        System.out.println("Falta vuelo o pasajero");
                     }
                     break;
                 }
 
                 case '6': {
+                    System.out.println("COLA DE ABORDAJE");
+
                     if (a.vuelo != null) {
                         a.vuelo.mostrarCola();
                     } else {
@@ -98,6 +113,8 @@ public class Aereopuerto {
                 }
 
                 case '7': {
+                    System.out.println("ABORDAR PASAJERO");
+
                     if (a.vuelo != null) {
                         a.vuelo.abordarPasajero();
                     } else {
@@ -107,6 +124,8 @@ public class Aereopuerto {
                 }
 
                 case '8': {
+                    System.out.println("INFORMACION DEL VUELO");
+
                     if (a.vuelo != null) {
                         System.out.println(a.vuelo.mostrar());
                     } else {
@@ -114,6 +133,19 @@ public class Aereopuerto {
                     }
                     break;
                 }
+
+                case '9': {
+                    System.out.println("Fin del sistema");
+                    break;
+                }
+
+                default: {
+                    System.out.println("Opcion invalida");
+                }
+            }
+
+            if (op != '9') {
+                Input.next("Presione ENTER para continuar");
             }
 
         } while (op != '9');

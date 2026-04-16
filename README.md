@@ -22,8 +22,11 @@ JetFlow/
 
 ## Como ejecutar
 1. Abrir el proyecto en NetBeans
-2. Ejecutar la clase Aereopuerto.java
+2. Ejecutar la clase Aereopuerto.java (clic derecho sobre la clase aereopuerto y luego run file)
 
+## NOTA IMPORTANTE
+REVISAR EN LA CARPETA DEPENDENCE QUE ESTÉ CORRECTAMENTE INSTALADA LA LIBRERÍA "mi-libreria-1.0.0.jar" 
+En caso de que el proyecto no ejecute, instalar la librería manuelmente dando clic derecho,  manually install artifact y finalmente seleccionar la libreria correspondiente previamente descargada en el equipo-
 ## Temas aplicados
 - Programacion orientada a objetos: uso de clases como Vuelo, Pasajero y Avion
 - Encapsulamiento: atributos privados en todas las clases
